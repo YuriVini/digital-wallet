@@ -4,7 +4,17 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  iconsContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+
+    padding: 20,
+  },
+  dashBoard: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+
+    marginHorizontal: 20,
   },
 });
