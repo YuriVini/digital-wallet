@@ -24,7 +24,6 @@ const Home = () => {
       <Balance />
 
       <Dashboard />
-      <Text style={{ color: "black" }}>Starting Challenge!</Text>
     </View>
   );
 };
