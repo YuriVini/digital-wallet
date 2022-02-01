@@ -30,3 +30,9 @@ export const getMyBalance = () =>
 
 export const getMyTransactions = () =>
   digitalWalletAPI.get<GetMyTransactions[]>("/transactions");
+
+export const postLogin = (username: string, password: string) =>
+  digitalWalletAPI.post("/login", {
+    username,
+    password,
+  });
