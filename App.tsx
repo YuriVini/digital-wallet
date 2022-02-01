@@ -1,15 +1,28 @@
-import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import theme from "./src/global/styles/theme";
-import AppRoutes from "./src/routes/app.routes";
+import "react-native-gesture-handler";
 
-import Home from "./src/screens/Home";
+import React, { useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
+import AppStackRoutes from "./src/routes/stack.routes";
+import AppBottomRoutes from "./src/routes/bottom.routes";
+import useAuth from "./src/context/Auth/UseAuth";
 
 const App = () => {
+  const { signed } = useAuth();
+
+  const value = () => {
+    if (signed === true) {
+      return true;
+    }
+  };
+
+  useEffect(() => {
+    value();
+  }, []);
+
   return (
     <NavigationContainer>
-      <AppRoutes />
+      {signed === false ? <AppStackRoutes /> : <AppBottomRoutes />}
     </NavigationContainer>
   );
 };
