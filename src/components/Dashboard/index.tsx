@@ -27,7 +27,6 @@ const Dashboard = () => {
   const [transactions, setTransactions] = useState<GetMyTransactions[]>([]);
   const [input, setInput] = useState<GetMyTransactions[]>([]);
   const [output, setOutput] = useState<GetMyTransactions[]>([]);
-  const [typeTransaction, setTypeTransaction] = useState();
 
   const emptyList = (text: string) => {
     return (
@@ -37,23 +36,26 @@ const Dashboard = () => {
     );
   };
 
-  const AllRoute = () => (
+  const AllRoute = ({ index }: any) => (
     <FlatList
       data={transactions as [GetMyTransactions]}
+      keyExtractor={index}
       ListEmptyComponent={emptyList("Você não possui transações")}
       renderItem={renderItem}
     />
   );
-  const InputRoute = () => (
+  const InputRoute = ({ index }: any) => (
     <FlatList
       data={input as [GetMyTransactions]}
+      keyExtractor={index}
       ListEmptyComponent={emptyList("Você não possui transações")}
       renderItem={renderItem}
     />
   );
-  const OutputRoute = () => (
+  const OutputRoute = ({ index }: any) => (
     <FlatList
       data={output as [GetMyTransactions]}
+      keyExtractor={index}
       ListEmptyComponent={emptyList("Você não possui transações")}
       renderItem={renderItem}
     />
@@ -107,7 +109,6 @@ const Dashboard = () => {
             <Text style={styles.listSubtitle}>{item.dataTransacao}</Text>
           </View>
         </View>
-        <Text>{item.tipoLancamento}</Text>
       </View>
     );
   };
