@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { Fontisto, SimpleLineIcons } from "@expo/vector-icons";
 import Wrapper from "../../components/Wrapper";
 
