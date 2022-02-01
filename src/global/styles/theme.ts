@@ -5,6 +5,7 @@ export default {
     black: "#000000",
 
     primary: "#20CAA8",
+    green: "#00F044",
 
     textLight: "#989898",
 
