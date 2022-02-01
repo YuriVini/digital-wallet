@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import {
   AntDesign,
   FontAwesome,
@@ -11,11 +11,11 @@ import Home from "../screens/Home";
 import theme from "../global/styles/theme";
 import { styles } from "./styles";
 
-const { Navigator, Screen } = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
-const AppRoutes = () => {
+const AppBottomRoutes = () => {
   return (
-    <Navigator
+    <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
         headerShown: false,
@@ -28,7 +28,7 @@ const AppRoutes = () => {
         },
       }}
     >
-      <Screen
+      <Tab.Screen
         name="Início"
         component={Home}
         options={{
@@ -45,7 +45,7 @@ const AppRoutes = () => {
           ),
         }}
       />
-      <Screen
+      <Tab.Screen
         name="Transações"
         component={Home}
         options={{
@@ -58,7 +58,7 @@ const AppRoutes = () => {
           ),
         }}
       />
-      <Screen
+      <Tab.Screen
         name="Pagar"
         component={Home}
         options={{
@@ -73,7 +73,7 @@ const AppRoutes = () => {
           ),
         }}
       />
-      <Screen
+      <Tab.Screen
         name="Meus Cartões"
         component={Home}
         options={{
@@ -86,7 +86,7 @@ const AppRoutes = () => {
           ),
         }}
       />
-      <Screen
+      <Tab.Screen
         name="Perfil"
         component={Home}
         options={{
@@ -99,8 +99,8 @@ const AppRoutes = () => {
           ),
         }}
       />
-    </Navigator>
+    </Tab.Navigator>
   );
 };
 
-export default AppRoutes;
+export default AppBottomRoutes;
